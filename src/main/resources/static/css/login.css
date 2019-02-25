@@ -1,0 +1,14 @@
+.body-bg{
+background-image: url(/images/awesome-blue-sky.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height:100vh;
+    overflow:auto;
+}
+h3.form-signin-heading{
+    color: white;
+}
+button#login-btn{
+    background-color: forestgreen;
+}

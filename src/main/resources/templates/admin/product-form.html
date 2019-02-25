@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/add-product.css}" />
+    <meta charset="UTF-8"/>
+    <title>Add Category</title>
+</head>
+
+<body class="body-bg">
+<div class="form-div">
+<form method="post" th:object="${product}" th:action="@{/admin/product/save}">
+
+    <input type="hidden" name="id" th:value="${product.id}" placeholder="Id"/> <!-- modelde oluşturulan productı alıyor
+    ve idsini otomatik giriyor -->
+    <p>Product Name:
+    <input type="text" name="productName" class="kaydirma" th:value="${product.productName}" placeholder="Product Name"/>
+    <br><!-- producttan name i alıyor içi boş olduğu için girdiğimiz değeri alıyor ve entitydeki setProductName methodu  ile set ediyor.
+    içi dolu olsa dolu hali yine gözükür ve istersek değiştirebiliriz. dolu hali de getProductName methdou ile geliyor -->
+    <p> Product Price: &nbsp;
+    <input type="text" name="productPrice"  th:value="${product.productPrice}" placeholder="Product Price"/>
+    <br>
+
+    <p> Product Category:
+
+    <select id="category" name="productCategory" th:value="${product.productCategory}">
+        <option class="category" th:with="category11=${tempCategory.category}" th:each="tempCategory:${categories}" th:value="${tempCategory.id}" th:text="${tempCategory.category}">
+             </option>
+
+        </th:each>
+    </select>
+
+    <br/><br/>
+</p>
+
+    <input type="submit"  th:value="Save"/>
+
+</form>
+</div>
+
+
+</body>
+</html>

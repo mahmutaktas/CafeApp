@@ -1,0 +1,15 @@
+a {
+    cursor: pointer;
+}
+
+a#hover-image div{
+    display: none;
+    border: 1px solid #000;
+    width: 400px;
+    position: absolute;
+    left: 165px;
+}
+
+a#hover-image div img{
+     width: 100%;
+}

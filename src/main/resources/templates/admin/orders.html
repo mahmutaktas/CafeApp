@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+        <a href="/admin/home">Back to Home</a>
+
+            <table class="table table-striped custab">
+                <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Order ID</th>
+                    <th>Product Name</th>
+                    <th>Order Status</th>
+                    <th>Ordering Time</th>
+                    <th>Shipping Time</th>
+                    <th>Ready</th>
+                    <
+                </tr>
+                </thead>
+                <th:block th:each="orderStat: ${orders}">
+                    <form id="orderStatus" role="form" action="/admin/orders/makeReady/" method="post">
+                        <tr>
+                            <td th:text="${orderStat.userID}"></td>
+                            <td th:text="${orderStat.id}"></td>
+                            <td th:text="${orderStat.productName}"></td>
+                            <td th:text="${orderStat.status}"></td>
+                            <td th:text="${#dates.format(orderStat.startTime, 'dd-MM-yyyy HH:mm:ss')}"></td>
+                            <td th:text="${#dates.format(orderStat.uptadeTime, 'dd-MM-yyyy HH:mm:ss')}"></td>
+                            <td><a class="btn btn-warning" th:href="@{/admin/orders/makeReady/{id}(id=${orderStat.id})}"><span th:text="Update"></span></a>
+                            </td>
+                        </tr>
+                    </form>
+                </th:block>
+            </table>
+        </form>
+
+
+    </div>
+</div>

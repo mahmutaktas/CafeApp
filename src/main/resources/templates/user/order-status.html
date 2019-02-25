@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+
+        <table class="table table-striped custab">
+            <thead>
+
+            <tr>
+                <th>Product Name</th>
+                <th>Order Status</th>
+                <th>Ordering Time</th>
+                <th>Shipping Time</th>
+            </tr>
+            </thead>
+            <tr th:each="order: ${orders}">
+                <td th:text="${order.productName}"></td>
+                <td th:text="${order.status}"></td>
+                <td th:text="${#dates.format(order.startTime, 'dd-MM-yyyy HH:mm:ss')}"></td>
+                <td th:text="${#dates.format(order.uptadeTime, 'dd-MM-yyyy HH:mm:ss')}"></td>
+            </tr>
+
+        </table>
+    </div>
+    <a href="/user/home">Back to Home</a>
+</div>

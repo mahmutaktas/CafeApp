@@ -1,5 +1,5 @@
 **Cafe Application**\
-This a Cafe Application made with Java - Spring Boot Framework that uses basic security features.\
+This a Cafe Application made with Java - Spring Boot Framework that uses basic security features.
 
 ![Login Page](https://github.com/mahmutaktas/CafeApp/blob/master/reame_img/1.png)
 
